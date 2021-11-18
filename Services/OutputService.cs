@@ -100,10 +100,6 @@ namespace cse210_batter_csharp.Services
         {
             Raylib_cs.Color color = Raylib_cs.Color.WHITE;
 
-            if (darkText)
-            {
-                color = Raylib_cs.Color.BLACK;
-            }
 
             Raylib.DrawText(text,
                 x + Constants.DEFAULT_TEXT_OFFSET,

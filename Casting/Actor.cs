@@ -12,6 +12,7 @@ namespace cse210_batter_csharp.Casting
 
         protected int _width = 0;
         protected int _height = 0;
+        protected int _points = 0;
 
         protected string _text = "";
         private string _image = "";
@@ -127,6 +128,29 @@ namespace cse210_batter_csharp.Casting
         public void SetVelocity(Point newVelocity)
         {
             _velocity = newVelocity;
+        }
+        public void ChangeDY()
+        {
+            Point velocity = GetVelocity();
+            int x = velocity.GetX();
+            int y = velocity.GetY();
+            SetVelocity(new Point(x,-y));
+        }
+        public void ChangeDX()
+        {
+            Point velocity = GetVelocity();
+            int x = velocity.GetX();
+            int y = velocity.GetY();
+            SetVelocity(new Point(-x,y));
+        }
+        public void AddPoints(int points)
+        {
+            _points += points;
+            // UpdateText();
+        }
+        public void UpdateText()
+        {
+            _text = $"Score: {_points}";
         }
 
         public void MoveNext()
